@@ -1,0 +1,41 @@
+* {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    padding-right: 0px;
+    
+}
+    
+
+header {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    
+
+}
+
+div {
+    text-align: center;
+    justify-content: center;
+    font-size: 30
+}
+
+header div {
+    text-align: center;
+    justify-content: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100%
+}
+
+
+p {
+    font-size: 30px;
+}
+
+
+
