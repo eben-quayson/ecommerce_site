@@ -15,28 +15,39 @@
 
 
     <div class = "shoe1">
-        <img src = "shoe_images/shoe1.jpeg">
-        <p> red shoe </p>
-        <div class = "shoe1_price"> 0 Cedis </div>
-        <button class = "bought"> + </button>
-         <button class = "sold"> - </button>
-         <div class = "in_stock"> 3 </div>
-         <button class = "addToCart"> Add To Cart</button>
+        <div class = "img">
+            <img src = "shoe_images/shoe1.jpeg">
+        </div>
+
+        <p> Red shoe </p>
+        <p class = "shoe1_price"> 58 Cedis </p>
+
+       <div class = "quantity">
+             <button class = "increment"> + </button>
+             <div class = "in_stock"> 3 </div>
+             <button class = "decrement"> - </button>
+       </div>
+
+       <button class = "addToCart"> Add To Cart</button>
     </div>
 
     <div class = "shoe2">
         <img src = "shoe_images/shoe2.jpeg">
-        <p> blue shoe </p>
-        <div class = "shoe2_price">0 cedis</div>
-        <button class = "bought"> + </button>
-        <button class = "sold"> - </button>
-        <div class = "in_stock"> 7 </div>
+        <p> Blue shoe </p>
+        <p class = "shoe2_price">50 cedis</p>
+
+        <div class="quantity">
+            <button class = "increment" id = "up"> + </button>
+            <div class = "in_stock"> 0</div>
+            <button class = "decrement" id = "down"> - </button>
+        </div>
+
         <button class = "addToCart"> Add To Cart</button>
     </div>
 
     
-<script src = "index.js"> </script>
-
-    </main>
+    
+</main>
 </body>
+<script src = "index.js"> </script>
 </html>

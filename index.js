@@ -1,52 +1,60 @@
-//import {  } from "module";
+var incre = document.querySelectorAll('.increment')
+var decre = document.querySelectorAll('.decrement')
+var quantity = document.querySelector('.in_stock')
 
-const products = [
-    {
-        id: 1,
-        product: "shoe1",
-        shoe_price: 2.88,
-        numberInStock: 5
-    },
+console.log(decre)
+console.log(incre)
+console.log(quantity)
 
-    {
-        id: 1,
-        product: "shoe2",
-        shoe_price: 7.88,
-        numberInStock: 6
-    }
-]
-const cart = [];
+for (i of incre) {
+    i.addEventListener('click', () => {
+        increment()
+    })
+    
 
-
-let addToCartBtn = document.querySelector(".addToCart")
-addToCartBtn.addEventListener("click", addToCart)
-addToCartBtn.innerHTML = addToCart()
-
-
-var b = document.querySelector(".bought");
-var s = document.querySelector(".sold")
-if (evt){
-    evt = b.addEventListener("click", bought)
 }
-else {
-    evt = s.addEventListener("click", sold);
+ 
+for (i of decre){
+    i.addEventListener('click', () => {
+        decrement()
+})
 }
 
-
-
-function bought() {
-    products[id][numberInStock]--;
-    cart = cart.push(products[id-1]);
-    return cart;
-    }
-
-
- function sold() {
-    products[id][numberInStock]++;
-    cart = cart.push(products[id-1]);
-    return cart;
-    }
-function addToCart(){
-    cart.push(products[id]);
-    return cart;
+function increment() {
+    var itemQuanity = Number(quantity.innerHTML)
+    itemQuanity++
+    quantity.innerHTML = `${itemQuanity}`
 }
+
+function decrement() {
+    //
+    var itemQuanity = Number(quantity.innerText)
+    if (itemQuanity > 0){
+        itemQuanity--
+        quantity.innerHTML = `${itemQuanity}`}
+        else {
+            alert("out of stock")
+        }
+
+    
+}
+
+
+
+
+class cartProduct {
+    constructor(customerId, id, price) {
+      this.customerId = customerId
+      this.id = id;
+      this.price = price
+
+      createCart() 
+        let cart = []
+        cart.push(customerId);
+        cart.push(id);
+        cart.push(price);
+        return cart;
+      }
+    }
+
+
