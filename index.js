@@ -1,24 +1,30 @@
-var incre = document.querySelectorAll('.increment')
-var decre = document.querySelectorAll('.decrement')
+const incre = [document.querySelector('.increment'), document.querySelector('.increment2')]
+const decre = [document.querySelector('.decrement'), document.querySelector('.decrement2')]
 var quantity = document.querySelector('.in_stock')
 
-console.log(decre)
-console.log(incre)
-console.log(quantity)
 
-for (i of incre) {
-    i.addEventListener('click', () => {
-        increment()
-    })
-    
-
-}
- 
-for (i of decre){
-    i.addEventListener('click', () => {
-        decrement()
+  incre[0].addEventListener('click', () => {
+    increment()
 })
-}
+ 
+incre[1].addEventListener('click', () => {
+  quantity = document.querySelector('.in_stock2')  
+  increment()
+  quantity = document.querySelector('.in_stock')
+})
+
+decre[0].addEventListener('click', () => {
+    decrement()
+  
+})
+ 
+decre[1].addEventListener('click', () => {
+  quantity = document.querySelector('.in_stock')
+  decrement()
+  quantity = document.querySelector('in_stock')
+})
+
+
 
 function increment() {
     var itemQuanity = Number(quantity.innerHTML)
@@ -28,7 +34,7 @@ function increment() {
 
 function decrement() {
     //
-    var itemQuanity = Number(quantity.innerText)
+    let itemQuanity = Number(quantity.innerHTML)
     if (itemQuanity > 0){
         itemQuanity--
         quantity.innerHTML = `${itemQuanity}`}
@@ -42,19 +48,22 @@ function decrement() {
 
 
 
-class cartProduct {
-    constructor(customerId, id, price) {
-      this.customerId = customerId
-      this.id = id;
-      this.price = price
+const cartButton = document.querySelector('addToCart')
+const productPrice = document.querySelector('shoe1_price')
+const productId = document.querySelector('id')
 
-      createCart() 
-        let cart = []
-        cart.push(customerId);
-        cart.push(id);
-        cart.push(price);
-        return cart;
-      }
-    }
+cartButton.addEventListener('click', () => {
+  shoe1 = new Shoe(productId.innerHTML, productPrice.innerHTML)
+  shoe1.pushToCart()
+  })
+ let date = new Date   
 
+const Shoe = class {
+  constructor(id, price){
+      this.cart = [date, id, price]
+  }
+  pushToCart(){
+    return this.cart
+  }
+}
 
