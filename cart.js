@@ -3,12 +3,13 @@
 const cartButton = document.querySelector('.addToCart')
 let productId = document.querySelector('.id')
 let productPrice = document.querySelector('.shoe1_price') 
-
+var cart = []
 
 
 cartButton.addEventListener('click', () => {
     const shoe1 = new Shoe(productId.innerHTML, productPrice.innerText)
-    shoe1.pushToCart()
+    let product1 = shoe1.pushToCart()
+    cart.push(product1)
     alert(`You have added ${productId.innerHTML} to your cart`)
     shoe1.showCart()
 
@@ -25,7 +26,9 @@ let productPrice2 = document.querySelector('.shoe2_price')
 
 cartButton2.addEventListener('click', () => {
     const shoe2= new Shoe(productId2.innerHTML, productPrice.innerText)
-    shoe2.pushToCart()
+    let product2 = shoe2.pushToCart()
+    cart.push(product2)
+    
     alert(`You have added ${productId2.innerHTML} to your cart`)
     shoe2.showCart()
 
@@ -33,22 +36,19 @@ cartButton2.addEventListener('click', () => {
 
 
 
+//Class declaration of items
 
-
-
-//Class declaration for shoe
 
 const Shoe = class {
     constructor(id, price ){
         this.cart = [id, price]
     }
     pushToCart(){
-        this.cart.push(Shoe)
         return this.cart
         
     }
     showCart(){
-        console.log(this.cart)
+        console.log(cart)
     }
     
 
