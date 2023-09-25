@@ -19,7 +19,7 @@ decre[0].addEventListener('click', () => {
 })
  
 decre[1].addEventListener('click', () => {
-  quantity = document.querySelector('.in_stock')
+  quantity = document.querySelector('.in_stock2')
   decrement()
   quantity = document.querySelector('in_stock')
 })
@@ -48,22 +48,5 @@ function decrement() {
 
 
 
-const cartButton = document.querySelector('addToCart')
-const productPrice = document.querySelector('shoe1_price')
-const productId = document.querySelector('id')
 
-cartButton.addEventListener('click', () => {
-  shoe1 = new Shoe(productId.innerHTML, productPrice.innerHTML)
-  shoe1.pushToCart()
-  })
- let date = new Date   
-
-const Shoe = class {
-  constructor(id, price){
-      this.cart = [date, id, price]
-  }
-  pushToCart(){
-    return this.cart
-  }
-}
 
